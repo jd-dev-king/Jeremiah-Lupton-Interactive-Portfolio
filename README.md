@@ -1,204 +1,275 @@
-# Jeremiah Lupton — Engineering, Data & Automation Portfolio
+# Jeremiah Lupton | Interactive Engineering Portfolio
 
-A modern, interactive, responsive portfolio built for GitHub Pages and designed to be embedded into a Wix Premium website through an iframe.
+<p align="center">
 
-## Design direction
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?style=for-the-badge)](https://jd-dev-king.github.io/Jeremiah-Lupton-Interactive-Portfolio/)
+![Version](https://img.shields.io/badge/version-v1.0.0-0078D4?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-Desktop%20%7C%20Tablet%20%7C%20Mobile-orange?style=for-the-badge)
 
-The portfolio uses the same visual language as the interactive engineering case studies:
+</p>
 
-- Deep navy technology background
-- Cyan, electric blue, lime, violet, and orange accents
-- Glass-style panels
-- Animated grids and ambient lighting
-- Interactive project filters
-- Searchable project cards
-- Capability constellation
+---
+
+## Overview
+
+This repository contains the source code for my **Interactive Engineering Portfolio**, a modern web application designed to showcase software engineering, manufacturing optimization, automation, artificial intelligence, pharmaceutical operations, data analytics, and engineering leadership through immersive project demonstrations and interactive case studies.
+
+Rather than presenting static screenshots or PDFs, the portfolio provides visitors with live applications, engineering dashboards, project walkthroughs, and technical documentation that demonstrate real-world problem solving.
+
+**Live Portfolio**
+
+https://jd-dev-king.github.io/Jeremiah-Lupton-Interactive-Portfolio/
+
+---
+
+# Features
+
+### Interactive Project Gallery
+
+Browse engineering projects across multiple technical disciplines.
+
+- Software Engineering
+- Artificial Intelligence
+- Manufacturing Engineering
+- Data Engineering
+- Automation & PLC
+- Pharmaceutical Manufacturing
+- Lean Six Sigma
+- Interactive Case Studies
+
+---
+
+### Live Project Demonstrations
+
+Many projects include fully functional GitHub Pages deployments.
+
+Examples include:
+
+- Trivia Madness v2.0
+- Manufacturing Asset Health Analytics
+- Manufacturing Operations Intelligence Automation
+- Car Parking Barrier Controller
+- First-Run Parts Interactive Case Study
+
+---
+
+### Professional Timeline
+
+Interactive career timeline featuring
+
+- Professional Experience
+- Education
+- Engineering Certifications
+- Volunteer Leadership
+- American Red Cross Service
+
+---
+
+### Modern UI
+
+- Animated hero section
+- Glassmorphism interface
+- Interactive project cards
+- Search & filtering
+- Responsive layouts
 - Animated counters
-- Professional education and service timeline
-- Responsive desktop, tablet, and mobile layouts
+- Technology ticker
+- Dynamic project modals
 
-## Project structure
+---
 
-```text
-jeremiah-lupton-tech-portfolio/
+### Resume Integration
+
+Visitors can instantly download the latest professional resume directly from the portfolio.
+
+---
+
+# Technology Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+### UI / UX
+
+- CSS Grid
+- Flexbox
+- Glassmorphism
+- CSS Animations
+- Responsive Design
+- Intersection Observer API
+
+### Hosting
+
+- GitHub Pages
+- GitHub Actions
+
+### Development
+
+- VS Code
+- Git
+- GitHub
+
+---
+
+# Repository Structure
+
+```
+.
+├── assets
+│   ├── css
+│   ├── docs
+│   ├── images
+│   ├── js
+│   └── data
+│
 ├── index.html
 ├── README.md
-├── .nojekyll
-└── assets/
-    ├── css/
-    │   └── styles.css
-    ├── data/
-    │   └── projects.js
-    ├── images/
-    └── js/
-        └── app.js
+└── .nojekyll
 ```
 
-## Test locally in VS Code
+---
 
-1. Extract the ZIP.
-2. Open the folder in VS Code.
-3. Install the **Live Server** extension if needed.
-4. Right-click `index.html`.
-5. Select **Open with Live Server**.
+# Featured Projects
 
-No build process or package installation is required.
+Current portfolio includes projects such as
 
-## Update project cards
+- Smart Assistant AI
+- Trivia Madness v2.0
+- Manufacturing Operations Intelligence
+- Manufacturing Asset Health Analytics
+- Manufacturing Process Optimization
+- First-Run Parts Interactive Case Study
+- Car Parking Barrier Controller
+- NeuralBrief Text Summarizer
+- Serverless SQL Studio
+- RC Circuit Simulator
+- Tuition Reimbursement Management System
+- GitSafe Practice Lab *(Coming Soon)*
+- Pharmaceutical cGMP Database *(Coming Soon)*
 
-Open:
+---
 
-```text
-assets/data/projects.js
-```
+# Highlights
 
-Each card is stored as a JavaScript object:
+✔ Interactive Engineering Portfolio
 
-```javascript
-{
-  title: "Project title",
-  category: "manufacturing",
-  version: "v1.0.0",
-  status: "Live Case Study",
-  description: "Project summary",
-  tech: ["HTML", "CSS", "JavaScript"],
-  kpis: ["KPI one", "KPI two", "KPI three"],
-  live: "https://live-project-url/",
-  github: "https://github.com/username/repository",
-  accent: "cyan",
-  icon: "factory"
-}
-```
+✔ Live Project Demonstrations
 
-Supported category filters:
+✔ GitHub Pages Deployment
 
-```text
-manufacturing
-data
-automation
-ai
-software
-```
+✔ Mobile Responsive
 
-Supported accent values:
+✔ Interactive Case Studies
 
-```text
-cyan
-blue
-lime
-violet
-orange
-```
+✔ Professional Resume Download
 
-## GitHub Pages deployment
+✔ Modern Engineering Dashboard Design
 
-Recommended repository name:
+✔ Continuous Portfolio Expansion
 
-```text
-Jeremiah-Lupton-Interactive-Portfolio
-```
+---
 
-Push the site:
+# Future Roadmap
+
+### Version 2
+
+- GitSafe Practice Lab live deployment
+- Pharmaceutical cGMP Database case study
+- Interactive project analytics dashboard
+- Blog & engineering articles
+- Advanced project search
+- Dark/Light theme switcher
+- Interactive certifications section
+- Embedded GitHub statistics
+- AI portfolio assistant
+- Portfolio CMS integration
+
+---
+
+# Local Development
+
+Clone the repository
 
 ```bash
-git init
-git add .
-git commit -m "Create interactive engineering portfolio v1.0.0"
-git branch -M main
-git remote add origin https://github.com/jd-dev-king/Jeremiah-Lupton-Interactive-Portfolio.git
-git push -u origin main
+git clone https://github.com/jd-dev-king/Jeremiah-Lupton-Interactive-Portfolio.git
 ```
 
-Enable Pages:
+Open the project
 
-```text
-Repository Settings
-→ Pages
-→ Deploy from a branch
-→ main
-→ / (root)
-→ Save
+```bash
+cd Jeremiah-Lupton-Interactive-Portfolio
 ```
 
-Expected URL:
+Launch using VS Code Live Server or any static web server.
 
-```text
+---
+
+# Deployment
+
+The portfolio is deployed using **GitHub Pages**.
+
+Every push to the **main** branch automatically updates the live website.
+
+---
+
+# About Me
+
+I am an engineering professional with experience spanning
+
+- Software Engineering
+- AI Applications
+- Data Engineering
+- Manufacturing Operations
+- Pharmaceutical Production
+- Process Improvement
+- Lean Six Sigma
+- Automation
+- Industrial Analytics
+- Quality Engineering
+- Engineering Leadership
+
+I enjoy building software that bridges engineering, manufacturing, and data-driven decision making.
+
+---
+
+# Connect
+
+**Portfolio**
+
 https://jd-dev-king.github.io/Jeremiah-Lupton-Interactive-Portfolio/
-```
 
-## Embed the GitHub Pages site in Wix
+**Website**
 
-After GitHub Pages is live:
+https://www.jeremiahlupton.com
 
-1. Open the Wix editor.
-2. Select **Add Elements**.
-3. Choose **Embed Code**.
-4. Select **Embed a Site**.
-5. Enter the complete GitHub Pages URL.
-6. Resize the embed element.
-7. Set the iframe height high enough to display the page or use a dedicated full-page Wix section.
+**GitHub**
 
-Example iframe:
+https://github.com/jd-dev-king
 
-```html
-<iframe
-  src="https://jd-dev-king.github.io/Jeremiah-Lupton-Interactive-Portfolio/"
-  title="Jeremiah Lupton engineering portfolio"
-  width="100%"
-  height="6000"
-  style="border:0; display:block;"
-  loading="lazy"
-  allowfullscreen>
-</iframe>
-```
+**LinkedIn**
 
-### Important iframe note
+https://www.linkedin.com/in/jeremiah-lupton
 
-A static iframe does not automatically resize to the height of a cross-domain GitHub Pages site. The simplest Wix setup is to:
+---
 
-- Place the iframe in a dedicated page.
-- Set a generous fixed height.
-- Test desktop, tablet, and mobile views.
-- Increase the height if the bottom of the portfolio is clipped.
+# License
 
-A second option is to link your Wix navigation directly to the GitHub Pages portfolio in the same browser tab.
+This project is licensed under the MIT License.
 
-## Content notes
+---
 
-The portfolio includes known project and education information. Review all project URLs before publishing and replace any `#` placeholder links in `assets/data/projects.js`.
+<p align="center">
 
+Designed & Developed by
 
-## v1.1 revisions
+**Jeremiah Lupton**
 
-- Updated Trivia Madness to v2.0 with its live web project.
-- Added live interactive portfolio links for:
-  - Car Parking Barrier Controller
-  - Manufacturing Asset Health Analytics
-  - Manufacturing Operations Intelligence
-  - First-Run Parts Improvement
-- Marked GitSafe Practice Lab and Pharmaceutical cGMP Database as GitHub Pages planned.
-- Added a downloadable resume button.
-- Added the resume PDF to `assets/docs/`.
-- Replaced the hero console with an animated 20+ years of experience badge.
-- Expanded the journey timeline with employment, volunteer service, and education in reverse chronological order.
+Interactive Engineering Portfolio
 
+© 2026 All Rights Reserved
 
-## v1.1.1 adjustment
-
-- Aligned Explore Projects, Start a Conversation, and Download Resume on the same desktop row.
-- Added responsive two-column tablet and single-column mobile behavior.
-
-
-## v1.1.2 adjustment
-
-- Added an animated **GitHub Coming Soon** notification bubble inside the project-details modal for:
-  - GitSafe Practice Lab
-  - Pharmaceutical cGMP Database
-
-
-## v1.1.3 adjustment
-
-- Updated **Trivia Madness v2.0** as a Web + Desktop Application.
-- Added web and desktop technologies to the card.
-- Updated KPI chips for cross-platform, solo/multiplayer, and leaderboard functionality.
-- Added a title-visibility safeguard so all project names remain visible above decorative card layers.
+</p>
