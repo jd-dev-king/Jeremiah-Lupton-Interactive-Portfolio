@@ -1,5 +1,4 @@
 export const projects = [
-  window.PORTFOLIO_PROJECTS = [
   {
     "title": "Manufacturing Process Optimization",
     "category": "manufacturing",
