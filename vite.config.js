@@ -4,5 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
 
-  base: "/Jeremiah-Lupton-Interactive-Portfolio/",
+  base: process.env.GITHUB_ACTIONS
+    ? "/Jeremiah-Lupton-Interactive-Portfolio/"
+    : "/",
 });
