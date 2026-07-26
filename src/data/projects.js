@@ -300,5 +300,3 @@ export const projects = [
     "liveLabel": "Open Live Demo"
   }
 ];
-
-];
