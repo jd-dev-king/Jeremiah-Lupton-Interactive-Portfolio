@@ -196,7 +196,7 @@ export const projects = [
     "github": "https://github.com/jd-dev-king/Car-Parking-Lot-Barrier-Controller",
     "accent": "blue",
     "icon": "plc",
-    "liveLabel": "Interactive Portfolio"
+    liveLabel: "Launch 3D Simulator"
   },
   {
     "title": "NeuralBrief Text Summarizer",
