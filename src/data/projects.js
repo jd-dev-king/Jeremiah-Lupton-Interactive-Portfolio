@@ -1,4 +1,5 @@
 export const projects = [
+  window.PORTFOLIO_PROJECTS = [
   {
     "title": "Manufacturing Process Optimization",
     "category": "manufacturing",
@@ -46,7 +47,7 @@ export const projects = [
     "github": "https://github.com/jd-dev-king/First-Run-Parts-Interactive-Case-Study",
     "accent": "lime",
     "icon": "quality",
-    "liveLabel": "Interactive Portfolio"
+    "liveLabel": "Open 3D Simulator"
   },
   {
     "title": "Serverless SQL Studio",
@@ -147,49 +148,50 @@ export const projects = [
     "liveLabel": "Interactive Portfolio"
   },
   {
-    "title": "Pharmaceutical cGMP Database",
+    "title": "Pharma Data Nexus",
     "category": "data",
     "version": "v1.0.0",
     "featured": false,
-    "status": "GitHub Pages Planned",
-    "description": "A PostgreSQL pharmaceutical dataset organized around master data, batch records, quality control, and equipment calibration with ALCOA+ principles. Repository publication and an interactive database case-study page are planned next.",
+    "status": "Live 3D Data Experience",
+    "description": "An immersive 3D pharmaceutical data environment presenting cGMP master data, batch records, quality control, equipment calibration, ALCOA+ traceability, and SQL workflows.",
     "tech": [
       "PostgreSQL",
       "pgAdmin",
       "SQL",
+      "Three.js",
       "cGMP",
       "ALCOA+"
     ],
     "kpis": [
       "4 Data Pillars",
-      "ALCOA+ Design",
-      "GitHub Pages Planned"
+      "3D Systems View",
+      "Live SQL Case Study"
     ],
-    "live": "#",
-    "github": "#",
+    "live": "https://jd-dev-king.github.io/Pharma-Data-Nexus/",
+    "github": "https://github.com/jd-dev-king/Pharma-Data-Nexus",
     "accent": "lime",
-    "icon": "shield",
-    "modalNotice": "GitHub Coming Soon",
-    "modalNoticeDetail": "The PostgreSQL repository and interactive pharmaceutical database case study will be published next."
+    "icon": "database",
+    "liveLabel": "Open Live 3D Project"
   },
   {
-    "title": "Car Parking Barrier Controller",
+    "title": "3D Parking PLC Simulator",
     "category": "automation",
-    "version": "v1.0.0",
+    "version": "v2.0.0",
     "featured": false,
-    "status": "PLC Automation",
-    "description": "OpenPLC parking-lot barrier controller using counters, entry and exit sensors, HMI inputs, reset logic, and simulated industrial control behavior.",
+    "status": "3D PLC Digital Twin",
+    "description": "A browser-based 3D parking PLC simulator with a continuous scan cycle, animated barriers and vehicles, live occupancy logic, holographic HMI controls, interlocks, diagnostics, and ladder/FBD views.",
     "tech": [
+      "Three.js",
+      "JavaScript",
       "OpenPLC",
       "Structured Text",
-      "Docker",
-      "Modbus",
-      "HMI"
+      "HMI",
+      "Digital Twin"
     ],
     "kpis": [
-      "Entry / Exit Logic",
-      "Live Counter",
-      "PLC Simulation"
+      "100 ms Scan Cycle",
+      "10 Parking Spaces",
+      "Live 3D HMI"
     ],
     "live": "https://jd-dev-king.github.io/Car-Parking-Lot-Barrier-Controller/",
     "github": "https://github.com/jd-dev-king/Car-Parking-Lot-Barrier-Controller",
@@ -277,8 +279,8 @@ export const projects = [
     "category": "software",
     "version": "v1.1.0",
     "featured": false,
-    "status": "GitHub Pages Planned",
-    "description": "Local Git training platform that simulates remotes, teammate changes, rejected pushes, merge conflicts, recovery workflows, and command-line practice. Repository publication and an interactive GitHub Pages companion are planned next.",
+    "status": "Live Interactive Demo",
+    "description": "Live Git training demonstration with simulated remotes, teammate updates, rejected pushes, merge conflicts, recovery workflows, and command-line practice. The complete hosted user experience is planned for Railway.",
     "tech": [
       "Python",
       "Flask",
@@ -288,14 +290,15 @@ export const projects = [
     ],
     "kpis": [
       "Conflict Simulation",
-      "Local Remote",
-      "GitHub Pages Planned"
+      "Remote Workflows",
+      "Railway Full Experience Planned"
     ],
-    "live": "#",
-    "github": "#",
+    "live": "https://jd-dev-king.github.io/GitSafe-Practice-Lab/",
+    "github": "https://github.com/jd-dev-king/GitSafe-Practice-Lab",
     "accent": "lime",
     "icon": "git",
-    "modalNotice": "GitHub Coming Soon",
-    "modalNoticeDetail": "The repository and interactive GitHub Pages training experience are currently being prepared."
+    "liveLabel": "Open Live Demo"
   }
+];
+
 ];
