@@ -1,0 +1,35 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.vite/
+.vercel/
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and test output
+*.log
+coverage/
+.nyc_output/
+
+# IDE and operating system
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/
+*.swp
+
+# Temporary and archive files
+*.zip
+*.mov
+*.mp4
+tmp/
+temp/
