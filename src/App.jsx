@@ -58,7 +58,7 @@ function Header() {
       <div className="shell nav-shell">
         <a className="brand" href="#top" aria-label="Return to top">
           <span className="brand-orbit"><span>JL</span></span>
-          <span className="brand-copy"><strong>Jeremiah Lupton</strong><small>Engineering × Data × Automation</small></span>
+          <span className="brand-copy"><strong>Jeremiah Lupton</strong><small>Technology Management × Connected Manufacturing</small></span>
         </a>
         <button className="menu-button" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}>
           <span></span><span></span><span></span><span className="sr-only">Toggle navigation</span>
@@ -85,17 +85,17 @@ function Hero() {
       <div className="hero-orb orb-two" aria-hidden="true"></div>
       <div className="shell hero-layout">
         <div className="hero-copy reveal">
-          <p className="eyebrow"><span className="live-dot"></span> Building practical systems that make work smarter</p>
-          <h1>Engineering ideas into <span className="gradient-text">interactive solutions.</span></h1>
-          <p className="hero-intro">I connect manufacturing operations, process improvement, data analytics, automation, and software development to turn complex problems into clear, measurable, and engaging digital experiences.</p>
+          <p className="eyebrow"><span className="live-dot"></span> Engineering excellence through connected systems</p>
+          <h1>Connecting operations into <span className="gradient-text">engineering systems.</span></h1>
+          <p className="hero-intro">I connect manufacturing operations, regulated processes, software, data, automation, and technology management through Engineering Excellence Systems (EES) — practical connected systems designed to improve quality, efficiency, compliance, and organizational performance.</p>
           <div className="hero-actions">
             <a className="button primary" href="#work">Explore Projects <span>↓</span></a>
             <a className="button secondary" href="#contact">Start a Conversation</a>
             <a className="button resume-button" href="/docs/Jeremiah-Lupton-Resume.pdf" download>Download Resume <span>⇩</span></a>
           </div>
           <div className="hero-proof">
-            <div><strong><Counter target={12} suffix="+"/></strong><span>Portfolio projects</span></div>
-            <div><strong><Counter target={5}/></strong><span>Technical disciplines</span></div>
+            <div><strong><Counter target={13} suffix="+"/></strong><span>Portfolio projects</span></div>
+            <div><strong><Counter target={7}/></strong><span>Technical disciplines</span></div>
             <div><strong><Counter target={4}/></strong><span>Academic degrees</span></div>
           </div>
         </div>
@@ -103,11 +103,11 @@ function Hero() {
           <div className="badge-halo halo-one"></div><div className="badge-halo halo-two"></div>
           <div className="badge-ring"><div className="badge-core">
             <span className="badge-over">OVER</span>
-            <strong className="experience-count"><Counter target={20} suffix="+"/></strong>
+            <strong className="experience-count"><Counter target={25} suffix="+"/></strong>
             <span className="badge-years">YEARS</span>
           </div></div>
           <p className="badge-title">Professional Experience</p>
-          <p className="badge-copy">Across technology, software, data, automation, operations, quality, laboratory work, leadership, and advanced manufacturing.</p>
+          <p className="badge-copy">Across business operations, enterprise software, data and automation, regulated pharmaceutical manufacturing, and technology management.</p>
           <div className="badge-achievements"><span>Engineering</span><span>Manufacturing</span><span>Data</span><span>Automation</span></div>
           <div className="badge-footer"><span>1998</span><i></i><span>Present</span></div>
         </div>
@@ -159,19 +159,72 @@ function Projects() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null);
 
-  const visible = useMemo(() => projects.filter(project => {
+  const matches = project => {
     const category = filter === "all" || project.category === filter;
     const haystack = [project.title, project.description, project.category, ...project.tech, ...project.kpis].join(" ").toLowerCase();
     return category && haystack.includes(query.toLowerCase());
-  }), [filter, query]);
+  };
+
+  const eesProjects = useMemo(
+    () => projects.filter(project => project.title.startsWith("EES ") && matches(project)),
+    [filter, query]
+  );
+
+  const standaloneProjects = useMemo(
+    () => projects.filter(project => !project.title.startsWith("EES ") && matches(project)),
+    [filter, query]
+  );
+
+  const renderProject = project => (
+    <article
+      className={`project-card reveal ${project.title === "EES Global Supply Nexus" ? "connected-project connected-project-one" : project.title === "EES Pharma Process Twin" ? "connected-project connected-project-two" : project.title.startsWith("EES ") ? "connected-project" : "standalone-project"}`}
+      key={project.title}
+      style={{"--card-accent": accents[project.accent] || accents.cyan}}
+    >
+      <div className="project-top"><span className="project-icon">{icons[project.icon] || "◆"}</span><span className="project-version">{project.version}</span></div>
+      <div className="project-content">
+        <span className="project-status">{project.status}</span>
+        <h3>{project.title}</h3>
+        <p className="project-description">{project.description}</p>
+        <div className="project-kpis">{project.kpis.map(k => <span key={k}>{k}</span>)}</div>
+        <div className="project-tech">{project.tech.map(t => <span key={t}>{t}</span>)}</div>
+      </div>
+      <div className="project-actions">
+        {project.live && project.live !== "#"
+          ? <a className="live-link" href={project.live} target="_blank" rel="noreferrer">{project.liveLabel || "Open Live Project"} ↗</a>
+          : <button onClick={() => setSelected(project)}>View Details</button>}
+        {project.github && project.github !== "#"
+          ? <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
+          : <button onClick={() => setSelected(project)}>More</button>}
+      </div>
+    </article>
+  );
+
+  const totalVisible = eesProjects.length + standaloneProjects.length;
 
   return (
     <section className="section projects-section" id="work">
       <div className="shell">
         <div className="section-heading projects-heading reveal">
-          <div><p className="eyebrow">02 · Selected Work</p><h2>Projects built to be explored, not just listed.</h2></div>
-          <p>Filter by discipline, search by technology, or open a project for its key outcomes.</p>
+          <div><p className="eyebrow">02 · Selected Work</p><h2>Engineering Excellence Systems and independent builds.</h2></div>
+          <p>The portfolio separates the connected EES ecosystem from standalone software projects so each can be explored in its proper context.</p>
         </div>
+
+        <section className="ees-overview-panel reveal" aria-labelledby="ees-overview-title">
+          <div className="ees-overview-copy">
+            <p className="eyebrow">Engineering Excellence Systems · Connected Systems Engineering</p>
+            <h3 id="ees-overview-title">One engineering initiative. Multiple connected operational systems.</h3>
+            <p>
+              Engineering Excellence Systems (EES) applies Pragmatic Synthesis through connected projects spanning manufacturing intelligence, industrial automation, pharmaceutical data, enterprise software, digital twins, analytics, and technology management. The approach observes the full system, identifies constraints, integrates disciplines, engineers practical responses, validates results, and continuously improves performance rather than optimizing isolated components.
+            </p>
+          </div>
+          <div className="ees-overview-stats" aria-label="EES portfolio overview">
+            <div><strong>10</strong><span>Connected EES Projects</span></div>
+            <div><strong>3</strong><span>Standalone Projects</span></div>
+            <div><strong>2</strong><span>Applied Case Studies</span></div>
+          </div>
+        </section>
+
         <div className="project-controls reveal">
           <div className="filter-group">
             {["all","manufacturing","data","automation","ai","software"].map(item => (
@@ -182,30 +235,29 @@ function Projects() {
           </div>
           <label className="search-box"><span>⌕</span><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search projects or technology" /></label>
         </div>
-        <div className="featured-label reveal"><span>Featured builds</span><i></i></div>
-        <div className="project-grid">
-          {visible.map(project => (
-            <article className={`project-card reveal ${project.title === "EES Global Supply Nexus" ? "connected-project connected-project-one" : project.title === "EES Pharma Process Twin" ? "connected-project connected-project-two" : ""}`} key={project.title} style={{"--card-accent": accents[project.accent] || accents.cyan}}>
-              <div className="project-top"><span className="project-icon">{icons[project.icon] || "◆"}</span><span className="project-version">{project.version}</span></div>
-              <div className="project-content">
-                <span className="project-status">{project.status}</span>
-                <h3>{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-kpis">{project.kpis.map(k => <span key={k}>{k}</span>)}</div>
-                <div className="project-tech">{project.tech.map(t => <span key={t}>{t}</span>)}</div>
-              </div>
-              <div className="project-actions">
-                {project.live && project.live !== "#"
-                  ? <a className="live-link" href={project.live} target="_blank" rel="noreferrer">{project.liveLabel || "Open Live Project"} ↗</a>
-                  : <button onClick={() => setSelected(project)}>View Details</button>}
-                {project.github && project.github !== "#"
-                  ? <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
-                  : <button onClick={() => setSelected(project)}>More</button>}
-              </div>
-            </article>
-          ))}
-        </div>
-        {visible.length === 0 && <div className="empty-state"><strong>No matching projects</strong><p>Try another category or search term.</p></div>}
+
+        {eesProjects.length > 0 && (
+          <div className="project-group ees-project-group">
+            <div className="project-group-heading reveal">
+              <div><span className="group-kicker">Connected Ecosystem</span><h3>EES Universe Projects</h3></div>
+              <p>Systems designed to share operational context, data, diagnostics, intelligence, and engineering workflows across the broader EES architecture.</p>
+            </div>
+            <div className="project-grid">{eesProjects.map(renderProject)}</div>
+          </div>
+        )}
+
+        {standaloneProjects.length > 0 && (
+          <div className="project-group standalone-project-group">
+            <div className="project-group-divider"><span>Independent Portfolio Builds</span><i></i></div>
+            <div className="project-group-heading reveal">
+              <div><span className="group-kicker">Standalone Projects</span><h3>Independent software and learning environments</h3></div>
+              <p>Purpose-built applications that remain independent from the EES data and digital-twin architecture while demonstrating software engineering, AI, and developer-tool capabilities.</p>
+            </div>
+            <div className="project-grid standalone-grid">{standaloneProjects.map(renderProject)}</div>
+          </div>
+        )}
+
+        {totalVisible === 0 && <div className="empty-state"><strong>No matching projects</strong><p>Try another category or search term.</p></div>}
       </div>
       {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
     </section>
@@ -341,7 +393,7 @@ function Contact() {
     <section className="section contact" id="contact">
       <div className="shell">
         <div className="contact-panel reveal">
-          <div className="contact-copy"><p className="eyebrow">06 · Contact</p><h2>Let’s build something useful.</h2><p>I am interested in engineering, process optimization, data analytics, automation, technical leadership, quality assurance, and cross-functional improvement opportunities.</p></div>
+          <div className="contact-copy"><p className="eyebrow">06 · Contact</p><h2>Let’s build something useful.</h2><p>I am interested in technology management, connected manufacturing systems, operational excellence, industrial automation, data engineering, software, and cross-functional engineering leadership opportunities.</p></div>
           <div className="contact-actions">
             <a className="contact-link primary-contact" href="mailto:jeremiah.lupton@comcast.net"><span>Send an email</span><strong>jeremiah.lupton@comcast.net</strong><i>↗</i></a>
             <a className="contact-link" href="https://www.linkedin.com/in/jdlupton" target="_blank" rel="noreferrer"><span>Connect professionally</span><strong>LinkedIn</strong><i>↗</i></a>
@@ -368,7 +420,7 @@ export default function App() {
       <div className="noise" aria-hidden="true"></div><div className="cursor-glow" aria-hidden="true"></div>
       <Header />
       <main id="main"><Hero /><Projects /><CaseStudies /><Capabilities /><Journey /><Contact /></main>
-      <footer className="site-footer"><div className="shell footer-layout"><div><strong>Jeremiah Lupton</strong><p>Engineering systems. Visualizing improvement. Building what’s next.</p></div><div><span>© {new Date().getFullYear()}</span><a href="#top">Back to top ↑</a></div></div></footer>
+      <footer className="site-footer"><div className="shell footer-layout"><div><strong>Jeremiah Lupton</strong><p>Engineering excellence through connected systems.</p></div><div><span>© {new Date().getFullYear()}</span><a href="#top">Back to top ↑</a></div></div></footer>
     </>
   );
 }

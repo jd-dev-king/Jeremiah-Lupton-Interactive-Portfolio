@@ -3,7 +3,7 @@ export const timeline = [
     "year": "2026",
     "type": "Employment",
     "className": "employment",
-    "title": "Processing Machine Operator",
+    "title": "Processing Operator",
     "subtitle": "Kenvue LLC · Jun 2025–Present",
     "body": "Operate pharmaceutical processing equipment, complete in-process testing and electronic batch records, troubleshoot production issues, and support GMP-compliant continuous improvement."
   },

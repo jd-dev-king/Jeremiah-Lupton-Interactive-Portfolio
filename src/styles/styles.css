@@ -2257,3 +2257,173 @@ svg {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* EES ecosystem refresh */
+.connected-project:not(.connected-project-one):not(.connected-project-two) {
+  border-color: color-mix(in srgb, var(--card-accent) 34%, rgba(255,255,255,.08));
+}
+.connected-project:not(.connected-project-one):not(.connected-project-two) .project-status::before {
+  content: "EES • ";
+  color: var(--card-accent);
+}
+
+
+/* EES / STANDALONE PROJECT GROUPING */
+.ees-overview-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, .7fr);
+  gap: 28px;
+  margin: 10px 0 34px;
+  padding: 28px 30px;
+  border: 1px solid rgba(57, 216, 255, 0.22);
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(169, 255, 68, 0.08), transparent 28%),
+    linear-gradient(135deg, rgba(15, 49, 78, 0.82), rgba(8, 25, 43, 0.78));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.ees-overview-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(#39d8ff, #a9ff44);
+}
+
+.ees-overview-copy h3 {
+  margin: 8px 0 12px;
+  max-width: 760px;
+  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+  line-height: 1.08;
+}
+
+.ees-overview-copy > p:last-child {
+  max-width: 850px;
+  color: var(--muted, #a7b9c9);
+  line-height: 1.72;
+}
+
+.ees-overview-stats {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+}
+
+.ees-overview-stats div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 13px;
+  background: rgba(5, 19, 33, .45);
+}
+
+.ees-overview-stats strong {
+  min-width: 38px;
+  color: #69e8ff;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.ees-overview-stats span {
+  color: #b3c5d3;
+  font-size: .84rem;
+}
+
+.project-group {
+  margin-top: 26px;
+}
+
+.project-group + .project-group {
+  margin-top: 52px;
+}
+
+.project-group-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(280px, .7fr);
+  gap: 30px;
+  align-items: end;
+  margin: 0 0 20px;
+}
+
+.project-group-heading h3 {
+  margin: 4px 0 0;
+  font-size: clamp(1.65rem, 2.2vw, 2.4rem);
+}
+
+.project-group-heading > p {
+  margin: 0;
+  color: #9dafbf;
+  line-height: 1.55;
+}
+
+.group-kicker {
+  color: #39d8ff;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.standalone-project-group .group-kicker {
+  color: #a9ff44;
+}
+
+.project-group-divider {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 26px;
+  color: #8ea0b2;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .67rem;
+  font-weight: 800;
+}
+
+.project-group-divider i {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(169,255,68,.45), rgba(169,255,68,.04));
+}
+
+.standalone-grid .project-card {
+  background: linear-gradient(160deg, rgba(20, 37, 54, .92), rgba(9, 24, 39, .92));
+}
+
+.standalone-grid .project-card::after {
+  opacity: .55;
+}
+
+@media (max-width: 900px) {
+  .ees-overview-panel,
+  .project-group-heading {
+    grid-template-columns: 1fr;
+  }
+  .ees-overview-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ees-overview-stats div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 620px) {
+  .ees-overview-panel {
+    padding: 22px 20px;
+  }
+  .ees-overview-stats {
+    grid-template-columns: 1fr;
+  }
+  .ees-overview-stats div {
+    flex-direction: row;
+    align-items: center;
+  }
+}
